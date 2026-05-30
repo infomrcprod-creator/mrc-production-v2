@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRC Production</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <img src="img/logo.png" alt="MRC Production" class="nav-logo" id="nav-logo">
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#ba">Before &amp; After</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact" class="nav-cta">Start a Project</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#ba">Before &amp; After</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Start a Project</a></li>
+  </ul>
+</div>
+  </div>
+
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <img src="img/logo.png" alt="" class="hero-logo-bg" aria-hidden="true">
+  <div class="container">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Ghost Production · Track Finishing · Remixes</p>
+      <h1 class="hero-h1">MRC <br><em>PRODUCTION</em></h1>
+      <h2 class="hero-h2">From Bedroom Ideas to Club Reality</h2>
+      <p class="hero-sub">Bridging the gap between your raw creativity and a release-ready master.</p>
+      <div class="hero-btns">
+        <a href="https://tally.so/r/KYkYyA" target="_blank" class="btn-acid">Start a Project</a>
+        <a href="#portfolio" class="btn-ghost">Listen to tracks</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="s-tag">What I do</p>
+    <h2 class="s-title">Services</h2>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-icon">👻</div>
+        <h3>Ghost Production</h3>
+        <p>From your initial idea to a complete, release-ready record. We build a professional track from scratch, tailored to your unique identity and engineered for the current electronic scene.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🎛</div>
+        <h3>Track Finishing</h3>
+        <p>Get past the finish line. Whether you need professional mixing and mastering for the club, or creative fixes for your arrangement and sound design, we will unlock your project's full potential.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🔄</div>
+        <h3>Remixes</h3>
+        <p>A full reimagining of your original material — or an official remix crafted for a specific genre and dancefloor. From bootlegs to official releases, every detail engineered for impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <p class="s-tag">Catalogue</p>
+    <h2 class="s-title">Portfolio</h2>
+    <audio id="main-audio" preload="none"></audio>
+    <div class="playlist-shell">
+      <div class="pl-header">
+        <div class="waveform" id="waveform">
+          <div class="wb"></div><div class="wb"></div><div class="wb"></div>
+          <div class="wb"></div><div class="wb"></div>
+        </div>
+        <div>
+          <div class="np-label">Now Playing</div>
+          <div id="np-title">— Select a track —</div>
+        </div>
+        <div id="np-genre"></div>
+      </div>
+      <div class="pl-controls">
+        <div class="prog-wrap" id="main-prog-wrap"><div class="prog-fill" id="main-prog"></div></div>
+        <div class="ctrl-row">
+          <button class="cbtn" id="btn-prev">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+          </button>
+          <button class="pbtn" id="btn-play">
+            <svg id="play-ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <svg id="pause-ic" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+          </button>
+          <button class="cbtn" id="btn-next">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+          </button>
+          <div class="vol-wrap">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--muted)"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            <input type="range" id="vol" min="0" max="1" step="0.05" value="0.8">
+          </div>
+          <div class="time-d"><span id="cur-t">0:00</span> / <span id="dur-t">0:00</span></div>
+        </div>
+      </div>
+      <ul class="track-list" id="track-list"></ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BEFORE / AFTER -->
+<section id="ba">
+  <div class="container">
+    <p class="s-tag">Transformation</p>
+    <h2 class="s-title">Before &amp; After</h2>
+    <p style="color:#888;font-size:0.86rem;max-width:520px;line-height:1.75;margin-top:0.6rem">
+      Select a genre, then use the slider to blend between the raw version and the finished result.
+    </p>
+    <div class="genre-tabs">
+      <button class="gtab active" data-genre="melodic-techno">Melodic Techno</button>
+      <button class="gtab" data-genre="hard-bounce">Hard Bounce</button>
+      <button class="gtab" data-genre="melodic-techno-2">Melodic Techno #2</button>
+    </div>
+
+    <!-- MELODIC TECHNO PANEL -->
+    <div class="ba-panel active" data-panel="melodic-techno">
+      <p class="ba-desc">A raw arrangement with untreated elements, brought to life through creative finishing — from sound design adjustments to final master.</p>
+      <div class="ab-player">
+        <div class="ab-track-row">
+          <div class="ab-labels">
+            <span class="ab-lbl before"><span class="ab-dot dot-b"></span> Raw</span>
+            <span style="color:var(--muted);font-size:0.7rem">→</span>
+            <span class="ab-lbl after"><span class="ab-dot dot-a"></span> Finished</span>
+          </div>
+          <span class="ab-track-name" style="font-size:0.85rem;color:var(--muted)">Melodic Techno #1</span>
+        </div>
+        <div class="ab-slider-wrap">
+          <div class="ab-slider-label">
+            <span class="active-side" id="lbl-techno-l">◀ RAW</span>
+            <span id="lbl-techno-r" style="color:var(--muted)">FINISHED ▶</span>
+          </div>
+          <input type="range" class="ab-range" min="0" max="100" value="0" id="ab-techno-slider">
+        </div>
+        <div class="mini-play-row" id="ab-techno-player">
+          <button class="mini-pbtn" id="ab-techno-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          <div class="mini-prog" id="ab-techno-prog"><div class="mini-fill" id="ab-techno-fill"></div></div>
+          <div class="mini-time" id="ab-techno-time">0:00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HARD BOUNCE PANEL -->
+    <div class="ba-panel" data-panel="hard-bounce">
+      <p class="ba-desc">A raw creative sketch built around a precise client brief — taken from rough idea to finished record through sound design, arrangement and full technical treatment.</p>
+      <div class="ab-player">
+        <div class="ab-track-row">
+          <div class="ab-labels">
+            <span class="ab-lbl before"><span class="ab-dot dot-b"></span> Raw</span>
+            <span style="color:var(--muted);font-size:0.7rem">→</span>
+            <span class="ab-lbl after"><span class="ab-dot dot-a"></span> Finished</span>
+          </div>
+          <span class="ab-track-name" style="font-size:0.85rem;color:var(--muted)">Hard Bounce #1</span>
+        </div>
+        <div class="ab-slider-wrap">
+          <div class="ab-slider-label">
+            <span class="active-side" id="lbl-dark-l">◀ RAW</span>
+            <span id="lbl-dark-r" style="color:var(--muted)">FINISHED ▶</span>
+          </div>
+          <input type="range" class="ab-range" min="0" max="100" value="0" id="ab-dark-slider">
+        </div>
+        <div class="mini-play-row" id="ab-dark-player">
+          <button class="mini-pbtn" id="ab-dark-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          <div class="mini-prog" id="ab-dark-prog"><div class="mini-fill" id="ab-dark-fill"></div></div>
+          <div class="mini-time" id="ab-dark-time">0:00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MELODIC TECHNO 2 PANEL -->
+    <div class="ba-panel" data-panel="melodic-techno-2">
+      <p class="ba-desc">A delicate, hypnotic track where the subtleties matter most — clean space, tonal balance, and movement refined from demo to release.</p>
+      <div class="ab-player">
+        <div class="ab-track-row">
+          <div class="ab-labels">
+            <span class="ab-lbl before"><span class="ab-dot dot-b"></span> Raw</span>
+            <span style="color:var(--muted);font-size:0.7rem">→</span>
+            <span class="ab-lbl after"><span class="ab-dot dot-a"></span> Finished</span>
+          </div>
+          <span class="ab-track-name" style="font-size:0.85rem;color:var(--muted)">Melodic Techno #2</span>
+        </div>
+        <div class="ab-slider-wrap">
+          <div class="ab-slider-label">
+            <span class="active-side" id="lbl-min-l">◀ RAW</span>
+            <span id="lbl-min-r" style="color:var(--muted)">FINISHED ▶</span>
+          </div>
+          <input type="range" class="ab-range" min="0" max="100" value="0" id="ab-min-slider">
+        </div>
+        <div class="mini-play-row" id="ab-min-player">
+          <button class="mini-pbtn" id="ab-min-btn">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          <div class="mini-prog" id="ab-min-prog"><div class="mini-fill" id="ab-min-fill"></div></div>
+          <div class="mini-time" id="ab-min-time">0:00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- HOW I WORK -->
+<section id="how">
+  <div class="container">
+    <p class="s-tag">Process</p>
+    <h2 class="s-title">How It Works</h2>
+    <p style="color:#888;font-size:0.86rem;max-width:520px;line-height:1.75;margin-top:0.6rem">
+      From first contact to final delivery — a clear, no-surprises workflow.
+    </p>
+    <div class="how-list">
+      <div class="how-item">
+        <div class="how-num">1</div>
+        <div class="how-body">
+          <h3>Request &amp; Brief</h3>
+          <p>Fill in the request form with your reference tracks, genre, BPM, and project details. The clearer the brief, the sharper the result.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <div class="how-num">2</div>
+        <div class="how-body">
+          <h3>Quote &amp; Terms</h3>
+          <p>You receive a detailed quote within 24–48 hours, covering deliverables, revision rounds, and rights transfer conditions. No surprises.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <div class="how-num">3</div>
+        <div class="how-body">
+          <h3>Production</h3>
+          <p>Work starts after deposit. Previews are shared on StackTune at each milestone — idea sketch, full arrangement, pre-master — so feedback stays clear, fast, and always in context.</p>
+        </div>
+      </div>
+      <div class="how-item">
+        <div class="how-num">4</div>
+        <div class="how-body">
+          <h3>Delivery</h3>
+          <p>Final files delivered on Google Drive: mastered WAV, unmastered mix, stems, and MIDI. Full rights transfer on final payment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BONUS MATERIAL -->
+<section id="bonus">
+  <div class="container">
+    <p class="s-tag">Free Resources</p>
+    <h2 class="s-title">Bonus Material</h2>
+    <p class="bonus-intro">
+      Before we start working together, make sure your files are ready.
+      Download these guides to export your project correctly — stems, samples, and session files — so we can hit the ground running.
+    </p>
+    <div class="bonus-grid">
+
+      <div class="bonus-card reveal">
+        <div class="bonus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <div class="bonus-body">
+          <h3>How to Export from Ableton</h3>
+          <p>Stems, session tempo, sample paths — everything you need to export your Ableton project correctly before sending it over.</p>
+        </div>
+        <a href="pdf/export-ableton.pdf" target="_blank" class="bonus-dl" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </div>
+
+      <div class="bonus-card reveal">
+        <div class="bonus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <div class="bonus-body">
+          <h3>How to Export from FL Studio</h3>
+          <p>A step-by-step guide to exporting stems and audio from FL Studio — including mixer tracks, tempo info, and file naming.</p>
+        </div>
+        <a href="pdf/export-fl-studio.pdf" target="_blank" class="bonus-dl" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </div>
+
+      <div class="bonus-card reveal">
+        <div class="bonus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        </div>
+        <div class="bonus-body">
+          <h3>How to Export from Logic Pro</h3>
+          <p>Bounce settings, track freeze, and stem export in Logic Pro — so your files arrive clean, organised, and ready to work with.</p>
+        </div>
+        <a href="pdf/export-logic.pdf" target="_blank" class="bonus-dl" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <p class="s-tag">Packages</p>
+    <h2 class="s-title">Simple Pricing</h2>
+    <p class="pricing-intro">
+      These prices are a starting point — a rough estimate to give you a clear idea before we talk.
+      Every project is different, and a final quote will always be agreed upon together before anything starts.
+      No hidden costs, no surprises.
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- GHOST PRODUCTION -->
+      <div class="pricing-card">
+        <div class="pricing-tag">01 — Ghost Production</div>
+        <h3>Full Track</h3>
+        <p class="pricing-sub">A complete, release-ready record built from scratch around your identity and sound.</p>
+        <div class="pricing-price">
+          <span class="amount">€100</span>
+          <span class="suffix">STARTING FROM · FINAL QUOTE ON REQUEST</span>
+        </div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li>Complete original track</li>
+          <li>Professional mix &amp; master</li>
+          <li>Commercial use rights</li>
+          <li>Ableton project file (latest version)</li>
+          <li>Full stems export</li>
+          <li>3 Revision rounds included</li>
+        </ul>
+        <p class="pricing-disclaimer">Final price agreed before work starts, based on complexity and scope.</p>
+      </div>
+
+      <!-- TRACK FINISHING -->
+      <div class="pricing-card">
+        <div class="pricing-tag">02 — Track Finishing</div>
+        <h3>Your Track, Finished</h3>
+        <p class="pricing-sub">You started it — we get it across the finish line. Sound design, arrangement, mix and master.</p>
+        <div class="pricing-price">
+          <span class="amount">€80</span>
+          <span class="suffix">STARTING FROM · FINAL QUOTE ON REQUEST</span>
+        </div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li>Completion of your existing project</li>
+          <li>Professional mix &amp; master</li>
+          <li>Ableton project file (latest version)</li>
+          <li>Full stems export</li>
+          <li>3 Revision rounds included</li>
+        </ul>
+        <p class="pricing-disclaimer">Final price agreed before work starts, based on complexity and scope.</p>
+      </div>
+
+      <!-- REMIX -->
+      <div class="pricing-card">
+        <div class="pricing-tag">03 — Remix</div>
+        <h3>Full Reimagining</h3>
+        <p class="pricing-sub">A creative rework of your material — or an official remix crafted for a specific genre and dancefloor.</p>
+        <div class="pricing-price">
+          <span class="amount">€110</span>
+          <span class="suffix">STARTING FROM · FINAL QUOTE ON REQUEST</span>
+        </div>
+        <hr class="pricing-divider">
+        <ul class="pricing-features">
+          <li>Complete remix from your stems</li>
+          <li>Professional mix &amp; master</li>
+          <li>Ableton project file (latest version)</li>
+          <li>Full stems export</li>
+          <li>3 Revision rounds included</li>
+        </ul>
+        <p class="pricing-disclaimer">Final price agreed before work starts, based on complexity and scope.</p>
+      </div>
+
+    </div>
+
+    <div class="pricing-cta">
+      <a href="https://tally.so/r/KYkYyA" target="_blank" class="btn-acid">Request a Quote</a>
+      <p>NO COMMITMENT · FREE QUOTE · REPLY WITHIN 24H</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHY CHOOSE ME -->
+<section id="why">
+  <div class="container">
+    <p class="s-tag">Why Me</p>
+    <h2 class="s-title">Why Choose Me?</h2>
+    <p class="why-intro">Every project is personal. Here is what you get when we work together.</p>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Release-Ready Quality</h3>
+        <p>Every track is crafted with the same attention I put into my own releases — mix, master, sound design and arrangement all under one roof.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>Ghost by Design</h3>
+        <p>My name never appears anywhere. You receive the full project and all rights — ready to release, perform or sell under your name, exactly as if you built it yourself.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3>Transparent Workflow</h3>
+        <p>Previews delivered on StackTune at every milestone. You listen, leave feedback directly on the track, and we move forward together — no lost emails, no guesswork.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </div>
+        <h3>Everything Included</h3>
+        <p>Mastered WAV, unmastered mix, Ableton project file, stems and MIDI. You get everything you need to publish, perform or keep building.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <p class="s-tag">FAQ</p>
+    <h2 class="s-title">Still Have Questions?</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do I keep all rights to the track?</span>
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, fully. On final payment you receive a complete transfer of rights — no co-credits, no royalty claims, no NDA to chase. The track is yours to release, sell or perform under your name with no strings attached.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>My track is not techno or dark electro, can we work together?</span>
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Techno, dark electro and minimal are where I work best, but I am open to adjacent genres — industrial, EBM, dub techno, experimental club music. If you are unsure, just send a brief and we will figure out together if it is a good fit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can you keep my original sound design and vibe?</span>
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely — preserving your identity is the whole point. Share reference tracks, describe your sound, and send whatever you have already built. The brief stage exists precisely to make sure the result sounds like you, not like me.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do I send large files like stems or vocals?</span>
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Google Drive or WeTransfer both work fine. Once the project is confirmed I will send you a shared folder where you can drop everything — stems, samples, vocals, references. No need to compress or rename anything, just upload as is.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What DAW do you use?</span>
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>I work exclusively in Ableton Live (latest version). Every project is delivered with the full Ableton session, organised and labelled, so you can open it, edit it or continue building on top of it without any issues.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can you help me with multiple tracks?</span>
+          <svg class="faq-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, and it tends to work even better over time — the more we collaborate, the sharper the results become. If you have an EP or a series of tracks in mind, mention it in the brief and we can discuss a plan that makes sense for the scope.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="s-tag">Work together</p>
+    <h2 class="s-title">Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-l">
+        <h3>Let's build<br>your sound.</h3>
+        <p>For direct contact or questions, reach out via email or Instagram DM.</p>
+        <div class="platform-links">
+          <a href="https://www.instagram.com/dariomrc_/" target="_blank" class="plink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--acid)"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+            <span>Instagram DM →</span>
+          </a>
+          <a href="https://wa.me/393451412085" target="_blank" class="plink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="color:var(--acid)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            +39 3451412085
+            <span>WhatsApp →</span>
+          </a>
+          <a href="mailto:info.mrcprod@gmail.com" class="plink">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--acid)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info.mrcprod@gmail.com
+            <span>Direct contact →</span>
+          </a>
+        </div>
+        <div class="social-row">
+          <a href="https://open.spotify.com/intl-it/artist/6VQ0Bo8JkMjEYPoqm6rpOe?si=LOqRuk-kR5mEwkKFVgA6pg" target="_blank" class="social-btn" title="Spotify">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.622.622 0 0 1 .207.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.781.781 0 0 1 .52-.973c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.532-1.072 9.404-.865 13.115 1.338a.937.937 0 0 1-.955 1.612z"/></svg>
+          </a>
+          <a href="https://www.beatport.com/it/artist/dario-mrc/899300" target="_blank" class="social-btn" title="Beatport">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4-2h-2v-4h2v4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-r">
+        <div class="contact-cta-box">
+          <p class="s-tag">Start a project</p>
+          <h3>Ready to build<br>something?</h3>
+          <p>Fill in the request form with your brief — genre, references, BPM, and any details about the project. I will get back to you with a quote within 24 hours.</p>
+          <a href="https://tally.so/r/KYkYyA" target="_blank" class="btn-acid">Open Request Form</a>
+          <p class="contact-cta-note">NO COMMITMENT · FREE QUOTE · REPLY WITHIN 24H</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img src="img/logo.png" alt="MRC Production" class="footer-logo">
+    <div class="footer-copy">© 2026 MRC PRODUCTION</div>
+    <div class="footer-tag">Ghost Production · Track Finishing · Remixes</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const item=btn.closest(".faq-item");
+    const isOpen=item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));
+    if(!isOpen) item.classList.add("open");
+  });
+});
+</script>
+
+<script>
+const hamburger = document.getElementById("nav-hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+const navLogo = document.getElementById("nav-logo");
+
+function toggleMenu(){
+  hamburger.classList.toggle("open");
+  mobileMenu.classList.toggle("open");
+}
+
+hamburger.addEventListener("click", toggleMenu);
+navLogo.addEventListener("click", ()=>{
+  if(window.innerWidth <= 768) toggleMenu();
+});
+
+mobileMenu.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click", ()=>{
+    hamburger.classList.remove("open");
+    mobileMenu.classList.remove("open");
+  });
+});
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  });
+},{threshold:0.15});
+
+document.querySelectorAll(
+  ".svc-card, .how-item, .pricing-card, .why-card, .faq-item, .plink, .bonus-card"
+).forEach(el=>{
+  el.classList.add("reveal");
+  observer.observe(el);
+});
+</script>
+
+
+
+</body>
+</html>
