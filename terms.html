@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use — MRC Production</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="img/logo-icon.png">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html"><img src="img/logo.png" alt="MRC Production" class="nav-logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#ba">Before &amp; After</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Start a Project</a></li>
+    </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#portfolio">Portfolio</a></li>
+    <li><a href="index.html#ba">Before &amp; After</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Start a Project</a></li>
+  </ul>
+</div>
+
+<!-- TERMS HERO -->
+<section id="terms-hero">
+  <div class="container">
+    <p class="s-tag">Legal</p>
+    <h1 class="s-title">Terms of Use</h1>
+    <p class="terms-meta">Effective as of <strong>July 14th, 2025</strong> · <a href="mailto:info.mrcprod@gmail.com">info.mrcprod@gmail.com</a></p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TERMS CONTENT -->
+<section id="terms-content">
+  <div class="container">
+    <div class="terms-layout">
+
+      <!-- SIDEBAR TOC -->
+      <nav class="terms-toc">
+        <p class="toc-label">Contents</p>
+        <ol>
+          <li><a href="#t1">Musical Genres</a></li>
+          <li><a href="#t2">Delivery Timeline</a></li>
+          <li><a href="#t3">Payment Terms</a></li>
+          <li><a href="#t4">Revisions</a></li>
+          <li><a href="#t5">Refund Policy</a></li>
+          <li><a href="#t6">Rights Transfer &amp; Copyright</a></li>
+          <li><a href="#t7">Client Responsibilities</a></li>
+        </ol>
+      </nav>
+
+      <!-- MAIN TEXT -->
+      <div class="terms-body">
+
+        <div class="terms-section" id="t1">
+          <h2><span class="terms-num">01</span> Musical Genres Covered</h2>
+          <p><!-- placeholder --></p>
+        </div>
+
+        <div class="terms-section" id="t2">
+          <h2><span class="terms-num">02</span> Delivery Timeline</h2>
+          <p><!-- placeholder --></p>
+        </div>
+
+        <div class="terms-section" id="t3">
+          <h2><span class="terms-num">03</span> Payment Terms</h2>
+          <p><!-- placeholder --></p>
+        </div>
+
+        <div class="terms-section" id="t4">
+          <h2><span class="terms-num">04</span> Revisions</h2>
+          <p><!-- placeholder --></p>
+        </div>
+
+        <div class="terms-section" id="t5">
+          <h2><span class="terms-num">05</span> Refund Policy</h2>
+          <p><!-- placeholder --></p>
+        </div>
+
+        <div class="terms-section" id="t6">
+          <h2><span class="terms-num">06</span> Rights Transfer &amp; Copyright</h2>
+          <p><!-- placeholder --></p>
+        </div>
+
+        <div class="terms-section" id="t7">
+          <h2><span class="terms-num">07</span> Client Responsibilities</h2>
+          <p><!-- placeholder --></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img src="img/logo.png" alt="MRC Production" class="footer-logo">
+    <div class="footer-copy">© 2026 MRC PRODUCTION</div>
+    <div class="footer-tag">
+      <span>Ghost Production</span><span class="footer-dot"> · </span><span>Track Finishing</span><span class="footer-dot"> · </span><span>Remixes</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById("nav-hamburger");
+const mobileMenu = document.getElementById("mobile-menu");
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("open");
+  mobileMenu.classList.toggle("open");
+});
+mobileMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("open");
+    mobileMenu.classList.remove("open");
+  });
+});
+</script>
+
+</body>
+</html>
