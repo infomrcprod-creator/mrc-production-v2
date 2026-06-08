@@ -9,13 +9,156 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" type="image/png" href="img/logo-icon.png">
+<style>
+  /* ── Terms-page additions ── */
+
+  .terms-intro {
+    font-size: 0.84rem;
+    color: #777;
+    line-height: 1.85;
+    max-width: 660px;
+    margin-top: 1.2rem;
+    font-style: italic;
+  }
+
+  /* Section h3 / h4 hierarchy */
+  .terms-section h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #f0f0f0;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .terms-section h4 {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #ccc;
+    margin-top: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* Spacing between p/ul/ol inside a section */
+  .terms-section p + p,
+  .terms-section p + ul,
+  .terms-section p + ol,
+  .terms-section ul + p,
+  .terms-section ol + p,
+  .terms-section ul + h4,
+  .terms-section ol + h4,
+  .terms-section p + h4 {
+    margin-top: 0.85rem;
+  }
+
+  /* Step blocks (Order Flow) */
+  .terms-step {
+    border-left: 2px solid rgba(227, 252, 2, 0.25);
+    padding: 0.75rem 0 0.75rem 1.25rem;
+    margin-top: 0.6rem;
+  }
+  .terms-step + .terms-step {
+    margin-top: 0.6rem;
+  }
+  .step-label {
+    font-family: 'Space Mono', monospace !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E3FC02 !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Phase label (small inline note after h3) */
+  .phase-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: #555;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    text-transform: none;
+    margin-left: 0.3rem;
+  }
+
+  /* Note / callout box */
+  .terms-note {
+    background: rgba(227, 252, 2, 0.04);
+    border-left: 2px solid rgba(227, 252, 2, 0.35);
+    padding: 0.85rem 1.1rem;
+    margin-top: 1rem;
+    font-size: 0.84rem !important;
+    color: #999 !important;
+    line-height: 1.8;
+  }
+  .terms-note strong {
+    color: #E3FC02 !important;
+  }
+
+  /* Tables */
+  .terms-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.82rem;
+  }
+  .terms-table th {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E3FC02;
+    text-align: left;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid rgba(227, 252, 2, 0.2);
+    background: rgba(227, 252, 2, 0.04);
+  }
+  .terms-table td {
+    padding: 0.65rem 1rem;
+    color: #aaa;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    line-height: 1.6;
+    vertical-align: top;
+  }
+  .terms-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .terms-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  /* Refund table — highlight the % column */
+  .refund-table td:last-child {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: #f0f0f0;
+    white-space: nowrap;
+  }
+
+  /* Internal cross-reference links (§N) */
+  .xref {
+    color: #E3FC02;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8em;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid rgba(227, 252, 2, 0.3);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .xref:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+</style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html"><img src="img/logo.png" alt="MRC Production" class="nav-logo"></a>
+    <a href="index.html"><img src="img/logo.png" alt="MRC Production" class="nav-logo" id="nav-logo"></a>
     <ul class="nav-links">
       <li><a href="index.html#services">Services</a></li>
       <li><a href="index.html#portfolio">Portfolio</a></li>
@@ -45,7 +188,8 @@
   <div class="container">
     <p class="s-tag">Legal</p>
     <h1 class="s-title">Terms of Use</h1>
-    <p class="terms-meta">Effective as of <strong>July 14th, 2025</strong> · <a href="mailto:info.mrcprod@gmail.com">info.mrcprod@gmail.com</a></p>
+    <p class="terms-meta">Effective as of <strong>July 14th, 2025</strong> · Version 2.2 · <a href="mailto:info.mrcprod@gmail.com">info.mrcprod@gmail.com</a></p>
+    <p class="terms-intro">These Terms &amp; Conditions govern all projects undertaken by MRC Production outside of third-party platforms. By proceeding with payment, the client confirms they have read, understood, and accepted every clause contained herein. These Terms apply in full to every order unless a specific written exception has been agreed upon in advance by both parties.</p>
   </div>
 </section>
 
@@ -61,55 +205,337 @@
         <p class="toc-label">Contents</p>
         <ol>
           <li><a href="#t1">Musical Genres</a></li>
-          <li><a href="#t2">Delivery Timeline</a></li>
-          <li><a href="#t3">Payment Terms</a></li>
-          <li><a href="#t4">Revisions</a></li>
-          <li><a href="#t5">Refund Policy</a></li>
-          <li><a href="#t6">Rights Transfer &amp; Copyright</a></li>
-          <li><a href="#t7">Client Responsibilities</a></li>
+          <li><a href="#t2">Order Flow</a></li>
+          <li><a href="#t3">Delivery Timeline</a></li>
+          <li><a href="#t4">Payment Terms</a></li>
+          <li><a href="#t5">Revisions</a></li>
+          <li><a href="#t6">Refund Policy</a></li>
+          <li><a href="#t7">Rights Transfer &amp; Copyright</a></li>
+          <li><a href="#t8">Client Responsibilities</a></li>
+          <li><a href="#t9">Governing Law &amp; Disputes</a></li>
+          <li><a href="#t10">Data Protection</a></li>
+          <li><a href="#t11">Updates</a></li>
         </ol>
       </nav>
 
       <!-- MAIN TEXT -->
       <div class="terms-body">
 
+        <!-- 01 -->
         <div class="terms-section" id="t1">
           <h2><span class="terms-num">01</span> Musical Genres Covered</h2>
-          <p><!-- placeholder --></p>
+          <p>MRC Production specializes exclusively in <strong>electronic music</strong>, with primary focus on:</p>
+          <ul>
+            <li><strong>Techno</strong> and its subgenres: peak time, hard techno, acid techno, melodic techno</li>
+            <li>Other electronic-adjacent styles, <strong>upon prior written agreement only</strong></li>
+          </ul>
+          <p>MRC Production reserves the right to <strong>decline any request</strong> that does not align with its production expertise or artistic direction, at any stage prior to payment. Once payment has been received and the project brief accepted, the scope is considered confirmed.</p>
         </div>
 
+        <!-- 02 -->
         <div class="terms-section" id="t2">
-          <h2><span class="terms-num">02</span> Delivery Timeline</h2>
-          <p><!-- placeholder --></p>
+          <h2><span class="terms-num">02</span> Order Flow</h2>
+          <p>All projects follow this sequence. Each step must be completed before the next begins.</p>
+
+          <div class="terms-step">
+            <p class="step-label">Step 1 — Initial Contact</p>
+            <p>The client contacts MRC Production via email or the inquiry form on mrcproduction.com, describing the desired service, genre, and any relevant references.</p>
+          </div>
+          <div class="terms-step">
+            <p class="step-label">Step 2 — Scope Agreement</p>
+            <p>MRC Production confirms availability, discusses the project details, and provides a final price. No work is scheduled until scope and price are agreed upon in writing (email or direct message).</p>
+          </div>
+          <div class="terms-step">
+            <p class="step-label">Step 3 — Payment</p>
+            <p>The client receives a Stripe payment link and completes payment in full. Work is not scheduled until payment is confirmed. See <a href="#t4" class="xref">§4</a> for details.</p>
+          </div>
+          <div class="terms-step">
+            <p class="step-label">Step 4 — Project Brief</p>
+            <p>Within <strong>48 hours of payment</strong>, the client submits the Project Brief, including all required materials and information as detailed in <a href="#t8" class="xref">§8</a>. The production timeline begins <strong>only upon receipt of a complete and usable brief</strong>, not from the date of payment.</p>
+          </div>
+          <div class="terms-step">
+            <p class="step-label">Step 5 — First Preview</p>
+            <p>MRC Production delivers a first preview of the track or mix within the timeframe specified in <a href="#t3" class="xref">§3</a>. This preview constitutes <strong>official first delivery</strong> and triggers the terms of the Refund Policy (<a href="#t6" class="xref">§6</a>).</p>
+          </div>
+          <div class="terms-step">
+            <p class="step-label">Step 6 — Creative Alignment Phase</p>
+            <p>After the first preview, the client may provide feedback, direction, and requests for changes freely. This phase exists to ensure the final version is fully aligned with the client's vision before it is considered complete. Exchanges during this phase — including requests to adjust sounds, structure, arrangement, or mix balance — <strong>do not count as formal revisions</strong>. See <a href="#t5-phase1" class="xref">§5</a> for the full definition of this phase and its limits.</p>
+          </div>
+          <div class="terms-step">
+            <p class="step-label">Step 7 — Final Delivery</p>
+            <p>Once MRC Production and the client have agreed that the track is complete, MRC Production delivers the final version. This delivery marks the <strong>start of the formal revision window</strong> as defined in <a href="#t5-phase2" class="xref">§5</a>. Rights transfer takes effect upon delivery of the final files and confirmation of full payment.</p>
+          </div>
+          <div class="terms-step">
+            <p class="step-label">Step 8 — Formal Revisions</p>
+            <p>After final delivery, the client may request formal revisions within the limits defined in <a href="#t5-phase2" class="xref">§5</a>. Each revision round must consist of a single, consolidated list of feedback.</p>
+          </div>
         </div>
 
+        <!-- 03 -->
         <div class="terms-section" id="t3">
-          <h2><span class="terms-num">03</span> Payment Terms</h2>
-          <p><!-- placeholder --></p>
+          <h2><span class="terms-num">03</span> Delivery Timeline</h2>
+
+          <h3 id="t3-preview">First Preview</h3>
+          <table class="terms-table">
+            <thead>
+              <tr><th>Service</th><th>First Preview Delivered Within</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ghost Production</td><td>5 business days from receipt of complete brief</td></tr>
+              <tr><td>Mixing</td><td>3 business days from receipt of complete brief</td></tr>
+              <tr><td>Mastering</td><td>2 business days from receipt of complete brief</td></tr>
+              <tr><td>Beat / Instrumental</td><td>4 business days from receipt of complete brief</td></tr>
+            </tbody>
+          </table>
+          <p>These timelines are standard estimates. Actual delivery may vary slightly depending on project complexity. MRC Production will communicate any delay proactively.</p>
+
+          <h3 id="t3-priority">Priority Delivery</h3>
+          <p>A <strong>priority delivery</strong> option is available at an additional flat fee of <strong>€25</strong>, subject to availability. This option must be requested and confirmed <strong>before payment</strong> — it cannot be added retroactively.</p>
+
+          <h3 id="t3-communication">Communication</h3>
+          <p>MRC Production typically responds within <strong>24 business hours</strong>. Response times may vary depending on workload and time zone differences. This window applies to all communication: feedback, file delivery, and general correspondence.</p>
+
+          <h3 id="t3-brief-not-received">Brief Not Received</h3>
+          <p>If the client does not submit a complete Project Brief within <strong>7 days of payment</strong>, the project will be placed on hold. If no brief is received within <strong>30 days of payment</strong>, the order will be cancelled and a refund will be issued per the terms of <a href="#t6" class="xref">§6</a>, treating the project as cancelled before production began.</p>
         </div>
 
+        <!-- 04 -->
         <div class="terms-section" id="t4">
-          <h2><span class="terms-num">04</span> Revisions</h2>
-          <p><!-- placeholder --></p>
+          <h2><span class="terms-num">04</span> Payment Terms</h2>
+          <ul>
+            <li>All payments are made <strong>in full and in advance</strong> via Stripe.</li>
+            <li>Accepted methods: credit/debit card, Apple Pay, Google Pay, PayPal, and other locally supported methods via Stripe.</li>
+            <li>Production does not begin until payment is confirmed and the Project Brief is received.</li>
+            <li>Prices are agreed upon before payment and are fixed for the confirmed scope. Any additions or changes to scope after payment may incur additional charges, which must be agreed upon in writing before work on the additions begins.</li>
+            <li>Invoices or payment receipts are available upon request.</li>
+          </ul>
         </div>
 
+        <!-- 05 -->
         <div class="terms-section" id="t5">
-          <h2><span class="terms-num">05</span> Refund Policy</h2>
-          <p><!-- placeholder --></p>
+          <h2><span class="terms-num">05</span> Revisions</h2>
+          <p>The production process is divided into two distinct phases with different rules: the <strong>Creative Alignment Phase</strong> and the <strong>Formal Revision Phase</strong>. Understanding the difference between these two phases is essential.</p>
+
+          <h3 id="t5-phase1">Phase 1 — Creative Alignment <span class="phase-note">(Post-Preview · Pre-Final Delivery)</span></h3>
+          <p>After the first preview is delivered, the client enters the Creative Alignment Phase. During this phase, the client is encouraged to provide <strong>open and iterative feedback</strong> to guide the direction of the track toward the desired result.</p>
+          <p>Requests during this phase may include:</p>
+          <ul>
+            <li>Changes to arrangement, structure, or song sections</li>
+            <li>Sound and instrument replacements or additions</li>
+            <li>Adjustments to mix balance, energy, or vibe</li>
+            <li>Changes in overall direction, within the originally agreed genre</li>
+            <li>Any other feedback aimed at aligning the track with the client's vision</li>
+          </ul>
+          <p><strong>None of these exchanges count as formal revisions.</strong> There is no limit on the number of feedback rounds during this phase. The goal is to reach a version that both parties consider complete and ready for final delivery.</p>
+          <p>This phase ends when MRC Production and the client mutually agree — explicitly or implicitly — that the track is ready to be finalized. At that point, MRC Production delivers the <strong>Final Version</strong>, which opens the Formal Revision Phase.</p>
+          <div class="terms-note">
+            <strong>Important:</strong> The Creative Alignment Phase does not authorize unlimited rebuilds or changes in genre. Requests that require starting the track from scratch, or that fundamentally contradict the original brief, fall outside this phase and will be quoted separately.
+          </div>
+
+          <h3 id="t5-phase2">Phase 2 — Formal Revisions <span class="phase-note">(Post-Final Delivery)</span></h3>
+          <p>Formal revisions begin <strong>after the Final Version has been delivered</strong>. At this stage, the track is considered complete, and revisions are intended to address specific, targeted adjustments — not creative exploration.</p>
+
+          <h4 id="t5-what-counts">What Counts as a Formal Revision</h4>
+          <p>A formal revision is a <strong>minor, specific adjustment</strong> to the final delivered version, including:</p>
+          <ul>
+            <li>Fine-tuning of mixing levels or EQ</li>
+            <li>Minor sound replacements</li>
+            <li>Small arrangement tweaks</li>
+            <li>Export format or technical corrections not caused by producer error</li>
+          </ul>
+          <p>Formal revisions <strong>do not include</strong>:</p>
+          <ul>
+            <li>Requests already addressed during the Creative Alignment Phase</li>
+            <li>Complete structural rebuilds or genre changes</li>
+            <li>Changes that contradict the approved final direction</li>
+          </ul>
+          <p>If a request falls outside the scope of a formal revision, MRC Production will communicate this and provide a separate quote before proceeding.</p>
+
+          <h4 id="t5-limits">Formal Revision Limits by Service</h4>
+          <table class="terms-table">
+            <thead>
+              <tr><th>Service</th><th>Free Formal Revisions Included</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ghost Production</td><td>3</td></tr>
+              <tr><td>Mixing</td><td>3</td></tr>
+              <tr><td>Mastering</td><td>3</td></tr>
+            </tbody>
+          </table>
+          <p>The exact number of included revisions is confirmed in the order summary sent after payment.</p>
+
+          <h4 id="t5-how-to-submit">How to Submit a Formal Revision Request</h4>
+          <p>Each revision round consists of <strong>one single, consolidated feedback message</strong>. Multiple separate messages sent after a revision has already begun may each count as a separate revision request. Clients are encouraged to collect all feedback before sending.</p>
+
+          <h4 id="t5-additional">Additional Formal Revisions</h4>
+          <p>Once included revisions are exhausted, each additional revision request is subject to a fee of <strong>€5–€20</strong>, depending on complexity and service type. This fee must be agreed upon and paid before work begins.</p>
+
+          <h4 id="t5-alt-versions">Alternative Versions</h4>
+          <p>Requests for alternative versions (extended mix, radio edit, instrumental, acappella, etc.) are subject to an export or production fee of <strong>€5–€20 per version</strong>, depending on scope.</p>
+
+          <h4 id="t5-producer-error">Re-exports Due to Producer Error</h4>
+          <p>Requests to re-export a file are <strong>not counted as revisions</strong> if the re-export is required due to a technical error, oversight, or failure on MRC Production's part to follow the agreed brief. In such cases, the corrected file is delivered at no additional cost.</p>
+
+          <h4 id="t5-deadline">Formal Revision Deadline</h4>
+          <p>All formal revision requests — whether included or paid — must be submitted within <strong>10 days of final delivery</strong> and in any case no later than <strong>30 days from the project start date</strong> (defined as the date the complete brief was received). After these windows have passed, no further revisions will be accepted unless agreed upon in writing, and additional fees may apply.</p>
         </div>
 
+        <!-- 06 -->
         <div class="terms-section" id="t6">
-          <h2><span class="terms-num">06</span> Rights Transfer &amp; Copyright</h2>
-          <p><!-- placeholder --></p>
+          <h2><span class="terms-num">06</span> Refund Policy</h2>
+          <p>MRC Production handles refunds with fairness and transparency. Because this is a personalized creative service, the refund structure is governed by <strong>two sequential milestones</strong>: the delivery of the first preview, and the explicit or implicit approval of that preview.</p>
+
+          <h3 id="t6-structure">Refund Structure</h3>
+          <table class="terms-table refund-table">
+            <thead>
+              <tr><th>Project Status</th><th>Refund</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cancelled <strong>before</strong> the first preview is delivered</td><td><strong>100%</strong></td></tr>
+              <tr><td>Cancelled <strong>after</strong> the first preview is delivered, but <strong>before</strong> it is approved</td><td><strong>50%</strong></td></tr>
+              <tr><td>Cancelled <strong>after</strong> the first preview has been approved</td><td><strong>0%</strong></td></tr>
+            </tbody>
+          </table>
+
+          <h3 id="t6-milestone1">Milestone 1 — Delivery of the First Preview</h3>
+          <p>The first preview is delivered when MRC Production sends the initial audio file to the client. At this point, significant creative time has already been invested. If the client chooses to cancel after receiving the preview, a <strong>50% refund</strong> is issued. The client forfeits all rights to the delivered material (see <a href="#t6-rights-upon-refund" class="xref">Rights Upon Refund</a> below).</p>
+
+          <h3 id="t6-milestone2">Milestone 2 — Approval of the First Preview</h3>
+          <p>The first preview is considered <strong>approved</strong> when one of the following occurs:</p>
+          <ul>
+            <li>The client explicitly confirms in writing that the preview is accepted and the project may continue</li>
+            <li>The client provides further creative feedback or direction (entering the Creative Alignment Phase per <a href="#t5-phase1" class="xref">§5</a>), which constitutes implicit acceptance that the project is moving forward</li>
+            <li><strong>48 hours pass</strong> from delivery without any response or formal objection from the client (auto-acceptance)</li>
+          </ul>
+          <p>Once the preview is approved — explicitly or implicitly — the project enters the Creative Alignment Phase and <strong>no refund will be issued</strong> for any subsequent cancellation, regardless of the reason.</p>
+
+          <h3 id="t6-objection">Formal Objection to the Preview</h3>
+          <p>The only mechanism by which a client can cancel after preview delivery and still receive a <strong>50% refund</strong> (rather than 0%) is by raising a <strong>formal written objection within 48 hours of delivery</strong>. A valid objection must:</p>
+          <ul>
+            <li>Be submitted in writing via email or direct message</li>
+            <li>Clearly identify which specific elements of the confirmed brief were not met</li>
+            <li>Be based on objective non-compliance with the agreed brief — not on subjective preference</li>
+          </ul>
+          <p>If MRC Production confirms the objection is valid, the client may choose between:</p>
+          <ol>
+            <li>A <strong>50% refund</strong> and cancellation of the project, with no rights transferred</li>
+            <li>A <strong>corrected preview</strong> delivered at no additional cost, keeping the project active</li>
+          </ol>
+          <p>If the objection is not confirmed as valid (i.e. the preview does reflect the agreed brief), the project continues and the standard refund structure applies. MRC Production will communicate this assessment in writing within 48 hours of receiving the objection.</p>
+
+          <h3 id="t6-subjective">Subjective Dissatisfaction</h3>
+          <p>Refunds will not be granted on the basis of subjective dissatisfaction if the work has been delivered in accordance with the agreed brief and references. In such cases, the client may request additional revisions at the rates defined in <a href="#t5-additional" class="xref">§5</a>.</p>
+
+          <h3 id="t6-cancellation-by-mrc">Cancellation by MRC Production</h3>
+          <p>In rare and exceptional circumstances, MRC Production reserves the right to cancel an order at any stage due to unforeseen personal circumstances or if the project is later found to fall outside the agreed artistic scope. In such cases:</p>
+          <ul>
+            <li>If cancelled before the first preview: <strong>100% refund</strong></li>
+            <li>If cancelled after the first preview but before approval: <strong>100% refund</strong> (full amount, since the cancellation is not the client's fault)</li>
+            <li>If cancelled after preview approval: a <strong>partial refund</strong> will be negotiated in good faith based on the work remaining</li>
+          </ul>
+
+          <h3 id="t6-processing">Refund Processing</h3>
+          <p>Refund requests must be submitted within <strong>10 days of first preview delivery</strong>. All approved refunds are processed via the original payment method within <strong>7 business days</strong> of approval.</p>
+
+          <h3 id="t6-rights-upon-refund">Rights Upon Refund</h3>
+          <p>If a refund — whether full or partial — is issued, <strong>no rights to any delivered material are transferred</strong>. The client is not authorized to use, distribute, publish, monetize, or share any part of the work delivered up to that point, in any form.</p>
         </div>
 
+        <!-- 07 -->
         <div class="terms-section" id="t7">
-          <h2><span class="terms-num">07</span> Client Responsibilities</h2>
-          <p><!-- placeholder --></p>
+          <h2><span class="terms-num">07</span> Rights Transfer &amp; Copyright</h2>
+
+          <h3 id="t7-transfer">Full Transfer Upon Final Payment and Delivery</h3>
+          <p>Upon final delivery of all project files and confirmation that full payment has been received, <strong>all rights to the produced work</strong> — including composition, arrangement, sound design, and audio files — are exclusively and irrevocably transferred to the client.</p>
+          <p>The client is free to:</p>
+          <ul>
+            <li>Distribute and release the track under their own name</li>
+            <li>Monetize the track on all platforms</li>
+            <li>Perform the track publicly</li>
+            <li>Register the track with collecting societies or distributors</li>
+          </ul>
+          <p><strong>No credit to MRC Production is required</strong>, unless otherwise agreed in writing.</p>
+
+          <h3 id="t7-no-fees">No Ongoing Fees</h3>
+          <p>No royalties, licensing fees, or usage restrictions apply after final delivery, unless explicitly agreed upon in writing before the project begins.</p>
+
+          <h3 id="t7-samples-mrc">Third-Party Samples Used by MRC Production</h3>
+          <p>All samples, loops, and sound elements used by MRC Production in the production are sourced from <strong>royalty-free or commercially licensed libraries</strong> and are cleared for commercial release. MRC Production will confirm this upon request.</p>
+
+          <h3 id="t7-samples-client">Third-Party Content Provided by the Client</h3>
+          <p>The client bears <strong>sole responsibility</strong> for ensuring that any material they provide (vocals, samples, loops, stems, recordings) is cleared for commercial use and does not infringe on any third-party copyright. MRC Production assumes no liability for copyright claims arising from client-supplied material.</p>
+
+          <h3 id="t7-portfolio">Portfolio Use</h3>
+          <p>MRC Production retains the right to use <strong>short, anonymized, unreleased audio snippets</strong> of the work exclusively for private portfolio or promotional purposes (e.g. demonstrating production quality to prospective clients). If the client wishes to waive this right, they must request so in writing before the project begins, and MRC Production will confirm the waiver.</p>
         </div>
 
-      </div>
-    </div>
+        <!-- 08 -->
+        <div class="terms-section" id="t8">
+          <h2><span class="terms-num">08</span> Client Responsibilities</h2>
+          <p>To ensure a smooth and efficient workflow, the client is required to fulfill the following obligations.</p>
+
+          <h3 id="t8-brief">Project Brief <span class="phase-note">(required within 48 hours of payment)</span></h3>
+          <p>The brief must include:</p>
+          <ul>
+            <li>A clear description of the desired style, mood, energy, and structure</li>
+            <li>At least 1–3 reference tracks via streaming links (Spotify, YouTube, SoundCloud, etc.)</li>
+            <li>For mixing/mastering: a high-quality audio file (WAV preferred, 24-bit or higher) of the current version</li>
+            <li>For co-productions: any available stems, vocal tracks, or project files</li>
+            <li>Any specific technical or creative requirements that must be followed (key, BPM, structure, target loudness, etc.)</li>
+          </ul>
+          <p>An incomplete or unclear brief may delay the start of production. MRC Production will request clarification once; if the brief remains incomplete after a second request, the project timeline will be adjusted accordingly.</p>
+
+          <h3 id="t8-responsiveness">Responsiveness During Production</h3>
+          <p>The client is expected to respond to messages and delivery notifications within a <strong>reasonable time</strong> (recommended: within 48–72 hours). Failure to respond may result in:</p>
+          <ul>
+            <li>Delays in delivery</li>
+            <li>Suspension of the project timeline</li>
+            <li>Triggering of the auto-approval clause (see below)</li>
+          </ul>
+
+          <h3 id="t8-auto-approval">Auto-Approval Clause</h3>
+          <p>If the client does not provide feedback or formally request a revision within <strong>10 days of the Final Version delivery</strong>, the delivered version will be considered <strong>automatically approved</strong>. Upon auto-approval:</p>
+          <ul>
+            <li>The order is considered complete</li>
+            <li>Any included formal revisions not yet requested are forfeited</li>
+            <li>Final file delivery and rights transfer proceed as per <a href="#t7-transfer" class="xref">§7</a></li>
+          </ul>
+          <div class="terms-note">The auto-approval clause does <strong>not</strong> apply during the Creative Alignment Phase (<a href="#t5-phase1" class="xref">§5</a>). During that phase, silence is not treated as approval — MRC Production will follow up proactively.</div>
+
+          <h3 id="t8-copyright">Copyright Clearance for Client-Supplied Material</h3>
+          <p>The client is solely responsible for ensuring that all materials they provide are cleared for commercial use. MRC Production will not proceed with material that is visibly or knowingly infringing on third-party rights.</p>
+
+          <h3 id="t8-compliance">Consequences of Non-Compliance</h3>
+          <p>Failure to meet these responsibilities may affect the quality and outcome of the project, and may limit or void the client's eligibility for revisions or refunds.</p>
+        </div>
+
+        <!-- 09 -->
+        <div class="terms-section" id="t9">
+          <h2><span class="terms-num">09</span> Governing Law &amp; Disputes</h2>
+          <p>These Terms &amp; Conditions are governed by the laws of <strong>Italy</strong>. Any dispute arising from or in connection with these Terms, including disputes regarding refunds, rights, or service quality, shall be subject to the exclusive jurisdiction of the courts of <strong>Venice (Venezia), Italy</strong>.</p>
+
+          <h3 id="t9-procedure">Dispute Resolution Procedure</h3>
+          <p>Before any formal escalation, both parties agree to attempt resolution through <strong>good-faith written communication</strong> within <strong>14 days</strong> of the dispute being raised. MRC Production commits to responding to any formal dispute notice within 5 business days.</p>
+        </div>
+
+        <!-- 10 -->
+        <div class="terms-section" id="t10">
+          <h2><span class="terms-num">10</span> Data Protection (GDPR)</h2>
+          <p>MRC Production collects and processes personal data (name, email address, payment information) solely for the purpose of managing projects and processing payments. Data is not sold, shared, or used for marketing without explicit consent.</p>
+          <p>Payment data is processed exclusively through <strong>Stripe</strong>, which acts as an independent data processor under its own privacy and security standards. MRC Production does not store payment card details.</p>
+          <p>Clients have the right to request access to, correction of, or deletion of their personal data at any time by contacting <a href="mailto:info.mrcprod@gmail.com">info.mrcprod@gmail.com</a>. Data is retained for the duration of the project and for a maximum of <strong>5 years</strong> thereafter for accounting and legal compliance purposes, in accordance with Italian law.</p>
+        </div>
+
+        <!-- 11 -->
+        <div class="terms-section" id="t11">
+          <h2><span class="terms-num">11</span> Updates to These Terms</h2>
+          <p>MRC Production reserves the right to update or modify these Terms &amp; Conditions at any time. Updates will be published at mrcproduction.com with a revised effective date.</p>
+          <p><strong>The version of these Terms in effect at the time of payment applies to that specific order.</strong> Subsequent updates do not apply retroactively to orders already in progress.</p>
+          <p>Clients are encouraged to review the current Terms before each new order.</p>
+        </div>
+
+      </div><!-- end .terms-body -->
+    </div><!-- end .terms-layout -->
   </div>
 </section>
 
@@ -120,13 +546,14 @@
   <div class="footer-inner">
     <img src="img/logo.png" alt="MRC Production" class="footer-logo">
     <div class="footer-copy">© 2026 MRC PRODUCTION</div>
-    <div class="footer-tag">
-      <span>Ghost Production</span><span class="footer-dot"> · </span><span>Track Finishing</span><span class="footer-dot"> · </span><span>Remixes</span>
+    <div class="footer-legal">
+      <a href="terms.html">Terms of Use</a>
     </div>
   </div>
 </footer>
 
 <script>
+// Mobile menu
 const hamburger = document.getElementById("nav-hamburger");
 const mobileMenu = document.getElementById("mobile-menu");
 hamburger.addEventListener("click", () => {
@@ -139,6 +566,20 @@ mobileMenu.querySelectorAll("a").forEach(link => {
     mobileMenu.classList.remove("open");
   });
 });
+
+// TOC active section highlight on scroll
+const sections = document.querySelectorAll(".terms-section");
+const tocLinks = document.querySelectorAll(".terms-toc a");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      tocLinks.forEach(a => a.classList.remove("active"));
+      const active = document.querySelector(`.terms-toc a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add("active");
+    }
+  });
+}, { rootMargin: "-20% 0px -70% 0px" });
+sections.forEach(s => observer.observe(s));
 </script>
 
 </body>
