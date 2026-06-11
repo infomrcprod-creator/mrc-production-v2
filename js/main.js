@@ -189,3 +189,37 @@ abConfigs.forEach(cfg=>{
     currentAudio.currentTime=((e.clientX-r.left)/r.width)*currentAudio.duration;
   });
 });
+
+// =========================================
+//  REVIEWS MARQUEE
+// =========================================
+const reviews = [
+  "Absolute pleasure to work with Dario again. He perfectly understood what I wanted and delivered a great, energetic mix and arrangement. Definitely won't be the last time working with him.",
+  "Hired him 4 times for four different songs. Every time it was a pleasant experience due to both his communication and also the quality of his work. He delivered really good work on the spot. 10/10 would rehire.",
+  "Always nice to work with Dario. It's my second time working with him and he is very good at his job. Always a pleasure — I can only recommend working with him.",
+  "The project turned out even better than I expected. Thank you so much.",
+  "He did his absolute best to make sure the final result fully matched my vision. His sense of arrangement and creativity made the first version already near to perfect. After just a few minor tweaks we arrived at an amazing final result with a great mix & master. Will definitely come back for more!",
+  "Absolutely stunning! Thank you for your help and willingness to collaborate. I will be back! Highly recommend Dario — very easy to communicate with, and he just gets you.",
+  "Very happy with the work! Everything was done very professionally and the communication was super smooth and easy. I can highly recommend working with Dario.",
+  "An incredible professional! I highly recommend him. I intend to do more work with him in the future. Well done!",
+];
+
+(function buildReviews(){
+  const track = document.getElementById("reviews-track");
+  if(!track) return;
+
+  // duplicate array so the seamless loop always has enough cards to fill
+  const doubled = [...reviews, ...reviews];
+
+  doubled.forEach((text) => {
+    const card = document.createElement("div");
+    card.className = "rev-card";
+    card.innerHTML = `
+      <p class="rev-quote">${text}</p>
+      <div class="rev-meta">
+        <span class="rev-buyer">Verified Buyer</span>
+        <span class="rev-badge">Via Fiverr</span>
+      </div>`;
+    track.appendChild(card);
+  });
+})();

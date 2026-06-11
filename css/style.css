@@ -274,6 +274,100 @@ section{padding:6rem 0}
 .why-card:hover h3{color:var(--acid)}
 .why-card p{font-size:0.82rem;color:#888;line-height:1.75}
 
+/* =========================================
+   REVIEWS MARQUEE
+   ========================================= */
+#reviews{background:var(--black);overflow:hidden}
+#reviews .container{margin-bottom:2.8rem}
+
+.reviews-marquee-outer{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  /* fade edges */
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 8%,#000 92%,transparent 100%);
+}
+
+.reviews-track{
+  display:flex;
+  gap:1.2rem;
+  width:max-content;
+  animation:marquee-scroll 48s linear infinite;
+}
+
+/* pause on hover of any card */
+.reviews-track:has(.rev-card:hover){
+  animation-play-state:paused;
+}
+
+@keyframes marquee-scroll{
+  0%  {transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+.rev-card{
+  flex-shrink:0;
+  width:320px;
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:1.8rem 2rem;
+  display:flex;
+  flex-direction:column;
+  gap:1.4rem;
+  transition:border-color 0.2s,background 0.2s;
+  cursor:default;
+}
+.rev-card:hover{
+  border-color:rgba(227,252,2,0.22);
+  background:#161616;
+}
+
+.rev-quote{
+  font-size:0.86rem;
+  color:#aaa;
+  line-height:1.8;
+  font-style:italic;
+  flex:1;
+  /* clamp long quotes to 5 lines for visual consistency */
+  display:-webkit-box;
+  -webkit-line-clamp:5;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.rev-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:0.8rem;
+}
+
+.rev-buyer{
+  font-family:'Space Mono',monospace;
+  font-size:0.6rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.rev-badge{
+  font-family:'Space Mono',monospace;
+  font-size:0.55rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--acid);
+  border:1px solid rgba(227,252,2,0.25);
+  padding:0.2rem 0.55rem;
+  white-space:nowrap;
+  opacity:0.75;
+}
+
+/* reduce motion */
+@media(prefers-reduced-motion:reduce){
+  .reviews-track{animation:none}
+}
+
 /* FAQ */
 #faq{background:var(--black)}
 .faq-list{margin-top:2.5rem;max-width:780px}
