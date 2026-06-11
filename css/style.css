@@ -228,7 +228,7 @@ section{padding:6rem 0}
 /* BONUS MATERIAL */
 #bonus{background:var(--mid)}
 .bonus-intro{font-size:0.86rem;color:#888;line-height:1.75;max-width:560px;margin-top:0.6rem;margin-bottom:3rem}
-.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.bonus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border)}
 .bonus-card{background:var(--mid);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:1.2rem;border-left:3px solid transparent;transition:border-color 0.2s,background 0.2s}
 .bonus-card:hover{border-left-color:var(--acid);background:#161616}
 .bonus-icon{color:var(--muted);transition:color 0.2s}
