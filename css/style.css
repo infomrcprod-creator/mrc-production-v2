@@ -80,7 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,5,5,0.9);b
     linear-gradient(to right, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.75) 55%, rgba(5,5,5,0.3) 100%),
     linear-gradient(to top, rgba(5,5,5,0.6) 0%, transparent 50%);
 }
-.hero-logo-bg{display:none,position:absolute;right:4%;top:50%;transform:translateY(-50%);width:340px;opacity:0.08;filter:brightness(0) invert(1);pointer-events:none;user-select:none}
+.hero-logo-bg{display:none;position:absolute;right:4%;top:50%;transform:translateY(-50%);width:340px;opacity:0.08;filter:brightness(0) invert(1);pointer-events:none;user-select:none}
 .hero-inner{position:relative;z-index:1;max-width:680px}
 .hero-eyebrow{font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--acid);margin-bottom:1.8rem}
 .hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,9vw,8.5rem);line-height:0.92;letter-spacing:0.01em;color:var(--white);margin-bottom:1.2rem}
